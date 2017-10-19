@@ -15,6 +15,7 @@
     "react-scripts": "1.0.14"
   },
   "devDependencies": {
-    "jsxstyle": "^2.0.0-rc.1"
+    "jsxstyle": "^2.0.0-rc.1",
+    "react-media": "^1.6.1"
   }
 }

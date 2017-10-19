@@ -4,7 +4,10 @@
 
 import React from 'react';
 import { Block } from 'jsxstyle';
+import Header from './Header';
 
 export default () => (
-  <Block>Home</Block>
+  <Block>
+    <Header/>
+  </Block>
 )
