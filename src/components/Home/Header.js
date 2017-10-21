@@ -41,6 +41,41 @@ const NavBar = () => (
   </Row>
 );
 
+const Button = ({ to, small, ...props }) => (
+  <Block
+    component={Link}
+    props={{ to }}
+    flex="1"
+    activeBoxShadow="2px 2px 4px rgba(0,0,0,.25)"
+    activeTop="5px"
+    background="#FFF"
+    borderRadius="100px"
+    boxShadow={small ? (
+      '0 5px 15px rgba(0, 0, 0, .25)'
+    ) : (
+      '0 10px 30px rgba(0, 0, 0, .25)'
+    )}
+    cursor="pointer"
+    fontSize="10px"
+    fontWeight="bold"
+    hoverBoxShadow={small ? (
+      '0 5px 10px rgba(0, 0, 0, .25)'
+    ) : (
+      '0 10px 25px rgba(0, 0, 0, .25)'
+    )}
+    hoverTop="1px"
+    marginRight={small ? '10px' : '20px'}
+    padding={small ? '10px' : '15px 25px'}
+    position="relative"
+    textAlign="center"
+    textTransform="uppercase"
+    top="0"
+    userSelect="none"
+    whiteSpace="nowrap"
+    {...props}
+  />
+);
+
 const Banner = ({ isSmallScreen }) => (
   <Row width="100%">
     {
@@ -50,6 +85,41 @@ const Banner = ({ isSmallScreen }) => (
         </Block>
       )
     }
+    <Block flex="1">
+      <Block lineHeight="1">
+        <Block
+          textTransform="uppercase"
+          fontSize={isSmallScreen ? '80%' : '120%'}
+          fontWeight="bold"
+        >
+          Learn once, Route anywhere
+        </Block>
+        <Block
+          component="h2"
+          textTransform="uppercase"
+          fontSize={isSmallScreen ? '200%' : '350%'}
+          fontWeight="bold"
+        >
+          React Router
+        </Block>
+        <Block
+          margin="20px 0"
+          fontSize={isSmallScreen ? '80%' : null}
+        >
+          Components are the heart of React's powerful, declarative
+          programming model. React Router is a collection of <b>navigational
+          components</b> that compose declaratively with your application. Whether
+          you want to have <b>bookmarkable URLs</b> for your web app or a composable
+          way to navigate in <b>React Native</b>, React Router works wherever React
+          is rendering--so take your pick!
+        </Block>
+        <Row>
+          <Button to="/web" small={isSmallScreen}>WEB</Button>
+          <Button to="/native" small={isSmallScreen}>NATIVE</Button>
+          <Button to="/core" small={isSmallScreen}>ANYWHERE</Button>
+        </Row>
+      </Block>
+    </Block>
   </Row>
 );
 
